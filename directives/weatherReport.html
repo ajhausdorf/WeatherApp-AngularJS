@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title"> {{ convertToDate({ dt: weatherDay.dt }) | date: dateFormat }} </h3>
+	</div>
+	<div class="panel-body">
+		Daytime Temperature: {{ convertToStandard({ daytimeTemp: weatherDay.temp.day }) }}
+	</div>
+</div>
+
+<!--  dt is passed into a function in the directive tag on forecast.htm, so it reqires an object map {dt: weatherDay.dt} where the first dt is the variable passed into the directive's html tag, and the second is it's JSON attribute -->
+		
+<!--  the object called (weatherResult in forecastController) & (w in the ng-repeat on forecast.html) is poked into the directive's scope as weatherDay: '=' (two way binding).  so, we need to use weatherDay to call it here  -->
